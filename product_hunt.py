@@ -14,14 +14,10 @@ GET_LAST_POSTS_QUERY = """
       posts(first: 100, postedAfter: $postedAfter, order:VOTES) {
         totalCount
         nodes {
-          id
           url
           name
           tagline
-          createdAt
           description
-          commentsCount
-          votesCount
         }
       }
     }
