@@ -28,8 +28,7 @@ def format_post(index: int, post: dict) -> str:
     return f"""
 <a href="{post['url']}"><b>{index}. {post['name']}</b></a>
 {post['tagline']}
-
-{post['description']}
+<blockquote>{post['tagline_ru']}</blockquote>
 """
 
 

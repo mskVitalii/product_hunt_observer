@@ -7,7 +7,7 @@ def start():
     posts, total_count = product_hunt.get_posts()
 
     for post in posts:
-        post["description"] = llama.translate_to_russian(post["description"])
+        post["tagline_ru"] = llama.translate_to_russian(post["tagline"])
         print("Ollama handled the post", post["name"])
 
     if posts:

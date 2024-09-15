@@ -74,7 +74,7 @@ def get_posts() -> (list, int):
 
     client = Client(transport=transport, fetch_schema_from_transport=False)
 
-    posted_after = ((datetime.now(timezone.utc) - timedelta(days=1))
+    posted_after = ((datetime.now(timezone.utc) - timedelta(days=2))
                     .replace(hour=18, minute=0, second=0, microsecond=0)
                     .isoformat()
                     .replace("+00:00", "Z"))

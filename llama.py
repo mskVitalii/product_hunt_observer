@@ -1,10 +1,17 @@
 import json
+import os
 
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+IS_DOCKER = os.getenv("IS_DOCKER") == "True"
 
 
 def translate_to_russian(english_text):
-    url = 'http://host.docker.internal:11434/api/generate'
+    url = 'http://localhost:11434/api/generate'
+    if IS_DOCKER:
+        url = 'http://host.docker.internal:11434/api/generate'
     headers = {'Content-Type': 'application/json'}
     data = {
         "model": "llama3.1",
